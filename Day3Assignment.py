@@ -1,0 +1,17 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+fmri = sns.load_dataset('fmri')
+print(fmri.head())
+sns.relplot(y='signal',x='timepoint',kind='line',hue='event',size='region',data=fmri)
+plt.figure(2)
+sns.lineplot(y='signal',x='timepoint',data=fmri)
+plt.figure(1)
+print()
+print()
+print(fmri.dtypes)
+print()
+print()
+print(fmri.describe())
+sns.catplot(x='subject',y='signal',data=fmri,kind='box')
+sns.catplot(x='subject',y='signal',data=fmri,kind='boxen')
+plt.show()
